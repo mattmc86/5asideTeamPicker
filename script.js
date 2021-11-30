@@ -34,7 +34,7 @@ submitEl.addEventListener("click", function displayPlayers() {
 
   //console.log("player array is " + newplayerList);
   randomPlayers= newplayerList.sort((a,b)=>0.5 - Math.random());
-  console.log("random list is "+ randomPlayers);
+  //console.log("random list is "+ randomPlayers);
   
 
   //document.getElementById("playerNameForm").reset();
@@ -46,15 +46,16 @@ submitEl.addEventListener("click", function displayPlayers() {
 
  
   function undoPlayer() {
-    var event = event.preventDefault();
+   
     console.log("player to remove is " + playerName);
-    //playerList.innerHTML = "";
-    playerName.innerHTML = "";
+    playerList.innerHTML = "";
+    //playerName.innerHTML = "";
     newplayerList.shift();
     //remove from newArray
   }
   removePlayer.addEventListener("click", undoPlayer);
 
+ 
 
 });
 
@@ -67,10 +68,68 @@ function teamsNew(){
     console.log("Team Two is " + teamTwo);
     showTeamOneEl.append(teamOne);
     showTeamTwoEl.append(teamTwo);
+    getApi();
 
     
 }
 generateEl.addEventListener("click", teamsNew);
+
+function getApi() {
+ 
+var requestForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Gateshead&units=metric&appid=51b8740ba38e6f14ed03de9b608c5b7a`;
+  fetch(requestForecastUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+      // Create elements for a card
+      var dayOne = document.querySelector(".weatherCard");
+      var col = document.createElement("div");
+      var card = document.createElement("div");
+      var cardBody = document.createElement("div");
+      var cardTitle = document.createElement("h5");
+      var weatherIcon = document.createElement("img");
+      var tempEl = document.createElement("p");
+      var windEl = document.createElement("p");
+      var humidityEl = document.createElement("p");
+
+      col.append(card);
+      card.append(cardBody);
+      cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
+
+      col.setAttribute("class", "col-md");
+      col.classList.add("five-day-card");
+      card.setAttribute("class", "card bg-primary h-100 text-white");
+      cardBody.setAttribute("class", "card-body p-2");
+      cardTitle.setAttribute("class", "card-title");
+      tempEl.setAttribute("class", "card-text");
+      windEl.setAttribute("class", "card-text");
+      humidityEl.setAttribute("class", "card-text");
+
+      // Add content to elements
+      //cardTitle.textContent = dayOneFull;
+
+      weatherIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}.png`
+      );
+      //weatherIcon.setAttribute('alt', iconDescription);
+      tempEl.textContent = `Temp: ${data.list[0].main.temp} °C`;
+      windEl.textContent = `Wind: ${data.list[0].wind.speed} MPH`;
+      humidityEl.textContent = `Humidity: ${data.list[0].main.humidity} %`;
+
+      dayOne.append(col);
+
+
+      });
+    };
+
+
+
+
+
 
 
 ////code for randomising array
