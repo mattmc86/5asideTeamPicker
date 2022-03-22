@@ -70,7 +70,7 @@ function teamsNew() {
 }
 
 generateEl.addEventListener("click", teamsNew);
-
+var dayOne = document.querySelector(".weatherCard");
 function getApi() {
   var requestForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Gateshead&units=metric&appid=51b8740ba38e6f14ed03de9b608c5b7a`;
   fetch(requestForecastUrl)
@@ -81,11 +81,12 @@ function getApi() {
       //console.log(data);
 
       // Create elements for a card
-      var dayOne = document.querySelector(".weatherCard");
+
       var col = document.createElement("div");
       var card = document.createElement("div");
       var cardBody = document.createElement("div");
       var cardTitle = document.createElement("h5");
+      var weatherDesc = document.createElement("p");
       var weatherIcon = document.createElement("img");
       var tempEl = document.createElement("p");
       var windEl = document.createElement("p");
@@ -93,17 +94,25 @@ function getApi() {
 
       col.append(card);
       card.append(cardBody);
-      cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
+      cardBody.append(
+        cardTitle,
+        weatherDesc,
+        weatherIcon,
+        tempEl,
+        windEl,
+        humidityEl
+      );
 
       col.setAttribute("class", "col-md");
       col.classList.add("five-day-card");
       card.setAttribute("class", "card bg-primary h-100 text-white");
       cardBody.setAttribute("class", "card-body p-2");
       cardTitle.setAttribute("class", "card-title");
-      tempEl.setAttribute("class", "card-text");
+      //weatherDesc.setAttribute("class", "card-text");
+
       windEl.setAttribute("class", "card-text");
       humidityEl.setAttribute("class", "card-text");
-
+      weatherDesc.textContent = `Right now it's: ${data.list[0].weather[0].description}`;
       // Add content to elements
       //cardTitle.textContent = dayOneFull;
 
@@ -124,6 +133,7 @@ function resetForm() {
   showPlayerEl.innerHTML = "";
   showTeamOneEl.innerHTML = "";
   showTeamTwoEl.innerHTML = "";
+  dayOne.innerHTML = "";
 }
 
 resetEl.addEventListener("click", resetForm);

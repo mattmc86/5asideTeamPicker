@@ -33,7 +33,7 @@
           Add 10 players then click the ball to generate teams.
         </h2>
         <form>
-             <input class="input player" id = "playerNameForm" name = "player" type="text" placeholder="Player name" autofocus/>
+             <input class="input player" id = "playerNameForm" name = "player" type="text" placeholder="Player name"/>
         </form>
        
       </div>
@@ -41,13 +41,13 @@
       <div class = "level is-mobile">
           <div class = "level-item">
                    <div class="control">
-        <button type = "button" class="button is-primary submit">Add</button>
+        <button type = "button" class="button is-warning submit" autofocus>Add</button>
       </div>
           </div>
        
           <div class = "level-item">
               <div class="control">
-        <button type = "button" class="button is-primary reset">Reset</button>
+        <button type = "button" class="button is-danger reset">Reset</button>
       </div>
           </div>
       </div>
@@ -55,7 +55,9 @@
       <br>
       <a href="#showTeams">
           <button class = "generate">
-         <i class="fa-solid fa-futbol fa-5x"></i>
+         <i class="fa-solid fa-futbol fa-5x" style="color: black;">
+
+         </i>
         <!-- <img class = "is-rounded ball" src = "./footy.png"> -->
     </button>
     </a>
@@ -102,4 +104,12 @@
 
     <script src="./script.js"></script>
   </body>
+  <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Team Picker</strong> by <a href="https://github.com/mattmc86" target="blank">Matt McKenna</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php" target="blank">MIT</a>. Built with HTML5, CSS3 and Javascript. Styled with <a href="https://bulma.io/" target="blank">Bulma.</a> 
+    </p>
+  </div>
+</footer>
 </html>
