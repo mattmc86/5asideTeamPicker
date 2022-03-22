@@ -1,32 +1,31 @@
-*{
-    font-family: 'Inter', sans-serif;
+* {
+  font-family: "Inter", sans-serif;
 }
 
-.showPlayer{
-    list-style: none;
+.showPlayer {
+  list-style: none;
+  color: white;
 }
 
-.generate{
-    margin-left: 50px;
-    background-color: transparent;
-    color: black;
-    max-height: 200px;
-    max-width: 200px;
-    border-radius: 50%;
-    border:none;
-    
-    
-    /* height:40px; */
-    /* border-radius: 15%; */
-    /* background-image: url(./5asideTeamPicker/ball.jpg); */
+.generate {
+  /* margin-left: 50px; */
+  background-color: transparent;
+  color: black;
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+  border: none;
+
+  /* height:40px; */
+  /* border-radius: 15%; */
+  /* background-image: url(./5asideTeamPicker/ball.jpg); */
 }
 
-.ball{
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%;
-    z-index: 9;
-    
+.ball {
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  /* border-radius: 50%; */
+  z-index: 9;
 }
 
 /* .teamOneContainer{
@@ -37,43 +36,81 @@
     width:fit-content;
     height: fit-content;
 } */
-.showTeamOne{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    /* width: 100%; */
-   height:350px;
-    /* object-fit: cover; */
-    /* height:300px;
+.showTeamOne {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  height: 350px;
+  /* object-fit: cover; */
+  /* height:300px;
     width: fit-content; */
-    color: white;
-    font-size: larger;
-    z-index: 9;
-    background-image: url(./fullPitch.jpg); 
+  color: white;
+  font-size: larger;
+  z-index: 9;
+  /* background-image: url(./TeamOne.png); */
 }
 
-.showTeamTwo{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    /* width: 100%; */
-     height:200px; 
-    /* object-fit: cover; 
+.showTeamTwo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  height: 200px;
+  /* object-fit: cover; 
     /* height:300px;
     /* width: fit-content;  */
-    color: white;
-    font-size: larger;
-    z-index: 9;
-    background-image: url(./TeamTwo.png);  
+  color: white;
+  font-size: larger;
+  z-index: 9;
+  /* background-image: url(./TeamTwo.png); */
+}
 
- } 
 
- .weatherCard{
-     /* background-color: turquoise; */
-     margin-left: 20px;
-     border: black solid 2px;
- }
+.hero {
+  background-color: #0f7719;
+  color: white;
+}
+
+.title {
+  color: white;
+}
+
+.picker {
+  background-color: #0eb04f;
+  color: white;
+}
+
+.subtitle {
+  color: white;
+}
+
+.show {
+  background-color: #0eb04f;
+  color: white;
+}
+
+.teamOne {
+  background-color: #0f7719;
+  color: white;
+}
+
+.teamTwo {
+  background-color: #0eb04f;
+  color: white;
+}
+
+.ball {
+  height: 48px;
+  width: 48px;
+  margin: 0px;
+}
+
+.weather {
+  background-color: #0eb04f;
+  color: white;
+}
