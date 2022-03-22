@@ -6,6 +6,7 @@ var generateEl = document.querySelector(".generate");
 var teamsPage = "./teams.html";
 var teamOneEl = document.querySelector(".teamOne");
 var removePlayer = document.querySelector(".undo");
+var resetEl = document.querySelector(".reset");
 //var removePlayer = document.createElement("button");
 var newplayerList = [];
 var showTeamOneEl = document.querySelector(".showTeamOne");
@@ -118,3 +119,11 @@ function getApi() {
       dayOne.append(col);
     });
 }
+
+function resetForm() {
+  showPlayerEl.innerHTML = "";
+  showTeamOneEl.innerHTML = "";
+  showTeamTwoEl.innerHTML = "";
+}
+
+resetEl.addEventListener("click", resetForm);

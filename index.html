@@ -33,14 +33,25 @@
           Add 10 players then click the ball to generate teams.
         </h2>
         <form>
-             <input class="input player" id = "playerNameForm" name = "player" type="text" placeholder="Player name" />
+             <input class="input player" id = "playerNameForm" name = "player" type="text" placeholder="Player name" autofocus/>
         </form>
        
       </div>
       <br />
-      <div class="control">
+      <div class = "level is-mobile">
+          <div class = "level-item">
+                   <div class="control">
         <button type = "button" class="button is-primary submit">Add</button>
       </div>
+          </div>
+       
+          <div class = "level-item">
+              <div class="control">
+        <button type = "button" class="button is-primary reset">Reset</button>
+      </div>
+          </div>
+      </div>
+    
       <br>
       <button class = "generate">
          <i class="fa-solid fa-futbol fa-5x"></i>
