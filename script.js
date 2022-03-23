@@ -49,6 +49,7 @@ submitEl.addEventListener("click", function displayPlayers() {
 
   function clearForm() {
     playerEl.value = "";
+
     // playerEl.textContent = "";
     // playerEl.innerHTML = "";
     // playerName.textContent = "";
@@ -134,6 +135,7 @@ function resetForm() {
   showTeamOneEl.innerHTML = "";
   showTeamTwoEl.innerHTML = "";
   dayOne.innerHTML = "";
+  newplayerList = [];
 }
 
 resetEl.addEventListener("click", resetForm);
