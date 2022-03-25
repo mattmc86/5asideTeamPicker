@@ -26,7 +26,9 @@ submitEl.addEventListener("click", function displayPlayers() {
   playerList.append(playerName);
   showPlayerEl.append(playerList);
   localStorage.setItem("playerName", playerName);
-  newplayerList.push(newplayerList.length + 1 + " " + playerName);
+  newplayerList.push(
+    newplayerList.length + 1 + " " + playerName + "            "
+  );
   randomPlayers = newplayerList.sort((a, b) => 0.5 - Math.random());
 
   // var nameFormEl = document.querySelector(".nameForm");
