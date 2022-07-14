@@ -15,6 +15,10 @@ var showTeamTwoEl = document.querySelector(".showTeamTwo");
 var teamOne = [];
 var teamTwo = [];
 
+function focusInput() {
+  document.getElementById("playerNameForm").focus();
+}
+
 //removePlayer.textContent = "Remove";
 //playerList.append(removePlayer);
 
